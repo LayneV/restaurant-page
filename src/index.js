@@ -1,5 +1,10 @@
 import "./styles.css";
-import "./menu.js";
 import { displayHome } from "./home.js";
+import { displayMenu } from "./menu.js";
+import { displayContact } from "./contact.js";
 
-displayHome();
+displayMenu();
+displayContact();
+const loadHome = displayHome();
+
+loadHome();

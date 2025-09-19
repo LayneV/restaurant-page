@@ -1,16 +1,34 @@
+import restaurantImg from "./burger.jpg";
 const homeBtn = document.getElementById("home-btn");
 
-export function displayHome() {
-  homeBtn.addEventListener("click", () => {
-    const content = document.getElementById("content");
-    content.innerHTML = "";
-    const heading = document.createElement("h1");
-    heading.textContent = "Restaurant Home Page";
-    content.appendChild(heading);
+function createHomeContent() {
+  const content = document.getElementById("content");
+  content.innerHTML = "";
 
-    const restaurantInfo = document.createElement("div");
-    restaurantInfo.textContent =
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas";
-    content.appendChild(restaurantInfo);
-  });
+  const homeDiv = document.createElement("div");
+  homeDiv.className = "home-div";
+
+  const homeText = document.createElement("div");
+  homeText.className = "home-text";
+
+  const heading = document.createElement("h2");
+  heading.textContent = "Voted #1 Burgers in the Nation!";
+
+  const restaurantInfo = document.createElement("div");
+  restaurantInfo.textContent = `We take every burger seriously. From perfectly seasoned, juicy beef patties to melted cheese, fresh toppings, and toasted brioche buns, every bite is crafted to deliver maximum flavor and satisfaction. Whether you’re craving a classic or something bold and adventurous, our burgers are made to impress. Come taste why we're the best!`;
+  const img = document.createElement("img");
+  img.src = restaurantImg;
+  img.alt = "Burger";
+  img.id = "home-burger";
+
+  homeText.appendChild(heading);
+  homeText.appendChild(restaurantInfo);
+  homeDiv.appendChild(homeText);
+  homeDiv.appendChild(img);
+  content.appendChild(homeDiv);
+}
+
+export function displayHome() {
+  homeBtn.addEventListener("click", createHomeContent);
+  return createHomeContent;
 }

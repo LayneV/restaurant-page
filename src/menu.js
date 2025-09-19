@@ -1,9 +1,11 @@
 const menuBtn = document.getElementById("menu-btn");
 
-menuBtn.addEventListener("click", () => {
-  const content = document.getElementById("content");
-  content.innerHTML = "";
-  const menu = document.createElement("h1");
-  menu.textContent = "Menu";
-  content.appendChild(menu);
-});
+export function displayMenu() {
+  menuBtn.addEventListener("click", () => {
+    const content = document.getElementById("content");
+    content.innerHTML = "";
+    const menu = document.createElement("h2");
+    menu.textContent = "Menu";
+    content.appendChild(menu);
+  });
+}
