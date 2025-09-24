@@ -64,8 +64,10 @@ button:active {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-button:focus {
-  background-color: hsl(14, 100%, 57%);
+button.active {
+  background-color: hsl(14, 100%, 57%); /* brighter color */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
 }
 
 h1 {
@@ -186,4 +188,54 @@ h2 {
 .contact-div {
   text-align: center;
   min-width: 500px;
+}
+
+#menu-div-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+#menu-div-content h2 {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+#menu-div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.menu-item {
+  background-color: rgba(45, 64, 89, 0.9);
+  border-radius: 16px;
+  padding: 1.5rem;
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: bold;
+  color: #eeeeee;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+}
+
+.menu-item img {
+  width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  border-radius: 12px;
 }

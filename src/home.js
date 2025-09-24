@@ -1,5 +1,4 @@
 import restaurantImg from "./burger.jpg";
-const homeBtn = document.getElementById("home-btn");
 
 function createHomeContent() {
   const content = document.getElementById("content");
@@ -29,6 +28,5 @@ function createHomeContent() {
 }
 
 export function displayHome() {
-  homeBtn.addEventListener("click", createHomeContent);
-  return createHomeContent;
+  createHomeContent();
 }
